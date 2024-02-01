@@ -1,7 +1,5 @@
 package co.zhanglintc;
 
-import java.io.File;
-
 /**
  * Hello world!
  *
