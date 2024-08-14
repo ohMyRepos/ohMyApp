@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="WARN" monitorInterval="30">
   <Properties>
-    <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%p] %l %msg%n</Property>
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%p] [%l] - %msg%n</Property>
     <Property name="LOG_FILE_DIR">${sys:user.dir}/ohMyLog4j2/logs</Property>
   </Properties>
 
   <appenders>
     <console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="#{LOG_PATTERN}"/>
+      <PatternLayout pattern="${LOG_PATTERN}"/>
     </console>
 
     <File name="LogOnce" fileName="${LOG_FILE_DIR}/app-once.log" append="false">
