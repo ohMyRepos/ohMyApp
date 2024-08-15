@@ -5,12 +5,7 @@
   <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
 
   <property name="LOG_HOME" value="${user.dir}/ohMyLogback/logs"/>
-  <!-- 日志输出格式 -->
-  <!--格式化输出：%d表示日期，%t表示线程名，%-5level：级别从左显示5个字符宽度
-  %m:日志消息，%n:换行符,%X{traceId}表示记录的traceId
-  %logger表示日志记录事件所在类名，{0}表示只保留类名的第一个元素，即类名的最后一部分
-  %X表示提取MDC中的值，${traceId}是MDC键，表示要提取的值的名称-->
-  <property name="ENCODER_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{traceId}] [%level] [%logger{0}] [%t] - %m%n"/>
+  <property name="ENCODER_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%level] [%C.%M\(%F:%L\)] - %m%n"/>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
